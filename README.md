@@ -5,9 +5,10 @@
 
 (sample data used here is from USGS Earthquake Hazards Program http://earthquake.usgs.gov/earthquakes/search)
 
+```
 $ cd mongodb
-
 $ ./bin/mongoimport --db data_for_test --collection earthquake_2008 --type csv --headerline --file /sample_data/Earthquake_2008.csv
+```
 
 (--drop argument)
 
@@ -18,9 +19,7 @@ List the databases, select one database, and list the collections(tables) in the
 
 ```
 show dbs
-
 use data_for_test
-
 show collections
 ```
 
@@ -28,7 +27,6 @@ Return how many documents (rows) there are in the collection (table) in which we
 
 ```
 db.earthquake_2008.count()
-
 ```
 
 Select one document in which the variable 'mag' is bigger than 7.
