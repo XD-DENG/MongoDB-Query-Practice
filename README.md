@@ -3,6 +3,8 @@
 
 ## Import CSV data
 
+(sample data used here is from USGS Earthquake Hazards Program http://earthquake.usgs.gov/earthquakes/search)
+
 $ cd mongodb
 $ ./bin/mongoimport --db data_for_test --collection earthquake_2008 --type csv --headerline --file /sample_data/Earthquake_2008.csv
 
@@ -23,3 +25,8 @@ db.earthquake_2008.find({},{"mag":1, "time":1, "place":1}).sort({"mag":1}).limit
 db.earthquake_2008.find({"mag":{$lt:5}},{"mag":1, "time":1, "place":1})
 
 db.earthquake_2008.find({"mag":{$lt:5}},{"mag":1, "time":1, "place":1}).sort({"mag":1}).count()
+
+
+## Reference
+[1] https://docs.mongodb.org/manual/reference/program/mongoimport/
+[2] https://docs.mongodb.org/manual/reference/program/mongoexport/
